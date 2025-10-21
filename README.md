@@ -200,6 +200,8 @@ Socket Stream → Timestamp Conversion → Watermarking → Windowed Aggregation
 ### Task 5 Output
 ![Task 5 Output Screenshot](Output/task5.png)
 
+![Task 5 Output Screenshot](Output/task5-1.png)
+
 ## Key Concepts Demonstrated
 
 ### Machine Learning Concepts
@@ -254,47 +256,16 @@ Socket Stream → Timestamp Conversion → Watermarking → Windowed Aggregation
 **Issue**: CSV data loaded as strings, ML requires numeric types  
 **Solution**: Explicit casting using `.cast(DoubleType())`
 
-### Challenge 3: Feature Vectors
-**Issue**: ML models require vector format, not scalar values  
-**Solution**: VectorAssembler transforms columns into feature vectors
-
-### Challenge 4: Late Data Handling
+### Challenge 3: Late Data Handling
 **Issue**: Streaming data may arrive out of order  
 **Solution**: Watermarking with 1-minute threshold
 
-### Challenge 5: Window Aggregation
+### Challenge 4: Window Aggregation
 **Issue**: Need to aggregate streaming data over time  
 **Solution**: Sliding windows (5-min window, 1-min slide)
 
 ---
 
-## Performance Considerations
-
-1. **Model Training**: One-time offline process, fast for linear models
-2. **Streaming Latency**: Near real-time predictions (sub-second)
-3. **Memory Management**: Windowing limits state size
-4. **Scalability**: Spark's distributed processing handles high throughput
-
----
-
-## Future Enhancements
-
-1. **Advanced Models**: Implement Random Forest or Gradient Boosting
-2. **More Features**: Add weather, traffic, event data
-3. **Anomaly Detection**: Implement statistical thresholds for deviations
-4. **Model Retraining**: Periodic updates with new data
-5. **Dashboard**: Real-time visualization with Grafana/Kibana
-6. **Kafka Integration**: Replace socket streaming with Kafka
-
----
-
-## References
-
-- [Apache Spark Structured Streaming Guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
-- [Spark MLlib Documentation](https://spark.apache.org/docs/latest/ml-guide.html)
-- [Linear Regression in Spark](https://spark.apache.org/docs/latest/ml-classification-regression.html#linear-regression)
-
----
 
 ## Conclusion
 
